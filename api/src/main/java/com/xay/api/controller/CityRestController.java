@@ -16,22 +16,22 @@ public class CityRestController {
     private CityService cityService;
 
 
-    @RequestMapping(value = "/api/city/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/api/city/{id}")
     public City findOneCity(@PathVariable("id") Long id) {
         return cityService.findCityById(id);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.POST)
+    @PostMapping(value = "/api/city")
     public void createCity(@RequestBody City city) {
         cityService.saveCity(city);
     }
 
-    @RequestMapping(value = "/api/city", method = RequestMethod.PUT)
+    @PutMapping(value = "/api/city")
     public void modifyCity(@RequestBody City city) {
         cityService.updateCity(city);
     }
 
-    @RequestMapping(value = "/api/city/{id}", method = RequestMethod.DELETE)
+    @DeleteMapping(value = "/api/city/{id}")
     public void modifyCity(@PathVariable("id") Long id) {
         cityService.deleteCity(id);
     }
