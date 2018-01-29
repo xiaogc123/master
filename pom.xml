@@ -23,13 +23,24 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+
+        <!--  MyBatis Generator  -->
+        <!--  Java接口和实体类  -->
+        <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
+        <targetMapperPackage>com.xay.api.dao.mapper</targetMapperPackage>
+        <targetModelPackage>com.xay.api.dao.model</targetModelPackage>
+        <!--  XML生成路径  -->
+        <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
+        <targetXMLPackage>mapper</targetXMLPackage>
+        <!--  依赖版本  -->
+        <mapper.version>1.0.0</mapper.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>log4j</groupId>
                 <artifactId>log4j</artifactId>
-                <!--<version>${log.version}</version>-->
+                <version>1.2.17</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
