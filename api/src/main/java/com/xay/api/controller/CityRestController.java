@@ -35,5 +35,9 @@ public class CityRestController {
     public void modifyCity(@PathVariable("id") Long id) {
         cityService.deleteCity(id);
     }
+    @PostMapping(value = "/api/city/list")
+    public Object list(@RequestBody City city){
+       return cityService.findAll();
+    }
 }
 

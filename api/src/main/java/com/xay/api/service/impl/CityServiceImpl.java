@@ -1,5 +1,6 @@
 package com.xay.api.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.xay.api.dao.mapper.CityMapper;
 import com.xay.api.dao.model.City;
 import com.xay.api.service.CityService;
@@ -10,6 +11,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -97,6 +99,12 @@ public class CityServiceImpl implements CityService {
             LOGGER.info("CityServiceImpl.deleteCity() : 从缓存中删除城市 ID >> " + id);
         }
         return ret;
+    }
+
+    @Override
+    public List<City> findAll() {
+        PageHelper.startPage(3,1);
+        return mapper.selectAll();
     }
 
 }

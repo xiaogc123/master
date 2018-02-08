@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xay.api.dao.mapper.UpmsUserMapper">
+  <resultMap id="BaseResultMap" type="com.xay.api.dao.model.UpmsUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="salt" jdbcType="VARCHAR" property="salt" />
+    <result column="real_name" jdbcType="VARCHAR" property="realName" />
+    <result column="avatar" jdbcType="VARCHAR" property="avatar" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="locked" jdbcType="TINYINT" property="locked" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="creater" jdbcType="VARCHAR" property="creater" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+    <result column="modifier" jdbcType="VARCHAR" property="modifier" />
+    <result column="role_ids" jdbcType="VARCHAR" property="roleIds" />
+    <result column="role_name" jdbcType="VARCHAR" property="roleName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    user_id, user_name, password, salt, real_name, avatar, phone, email, sex, locked, 
+    create_time, creater, modify_time, modifier, role_ids, role_name
+  </sql>
+</mapper>

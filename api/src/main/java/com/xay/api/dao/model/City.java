@@ -1,27 +1,26 @@
 package com.xay.api.dao.model;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-/**
- * Created by xiaogc
- * on 2018/1/28.
- */
-public class City implements Serializable {
-    private static final long serialVersionUID = -1L;
-
+@Table(name = "city")
+public class City {
     /**
      * 城市编号
      */
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     /**
      * 省份编号
      */
-    private Long provinceId;
+    @Column(name = "province_id")
+    private Integer provinceId;
 
     /**
      * 城市名称
      */
+    @Column(name = "city_name")
     private String cityName;
 
     /**
@@ -29,46 +28,75 @@ public class City implements Serializable {
      */
     private String description;
 
-    public Long getId() {
+    /**
+     * 获取城市编号
+     *
+     * @return id - 城市编号
+     */
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    /**
+     * 设置城市编号
+     *
+     * @param id 城市编号
+     */
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getProvinceId() {
+    /**
+     * 获取省份编号
+     *
+     * @return province_id - 省份编号
+     */
+    public Integer getProvinceId() {
         return provinceId;
     }
 
-    public void setProvinceId(Long provinceId) {
+    /**
+     * 设置省份编号
+     *
+     * @param provinceId 省份编号
+     */
+    public void setProvinceId(Integer provinceId) {
         this.provinceId = provinceId;
     }
 
+    /**
+     * 获取城市名称
+     *
+     * @return city_name - 城市名称
+     */
     public String getCityName() {
         return cityName;
     }
 
+    /**
+     * 设置城市名称
+     *
+     * @param cityName 城市名称
+     */
     public void setCityName(String cityName) {
         this.cityName = cityName;
     }
 
+    /**
+     * 获取描述
+     *
+     * @return description - 描述
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * 设置描述
+     *
+     * @param description 描述
+     */
     public void setDescription(String description) {
         this.description = description;
     }
-
-    @Override
-    public String toString() {
-        return "City{" +
-                "id=" + id +
-                ", provinceId=" + provinceId +
-                ", cityName='" + cityName + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
 }
-

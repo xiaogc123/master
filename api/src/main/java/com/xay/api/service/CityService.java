@@ -3,6 +3,8 @@ package com.xay.api.service;
 
 import com.xay.api.dao.model.City;
 
+import java.util.List;
+
 /**
  * 城市业务逻辑接口类
  *
@@ -40,4 +42,7 @@ public interface CityService {
      * @return
      */
     Long deleteCity(Long id);
+
+    List<City> findAll();
+
 }
